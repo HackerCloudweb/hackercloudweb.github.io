@@ -1,0 +1,23 @@
+{
+    "name": "package.json",
+    "version": "1.0.0",
+    "description": "HackerCloud's website",
+    "main": "js/main,js",
+    "scripts": {
+      "toc": "markdown-toc -i --maxdepth 3 README.md"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Sapurton/sapurton.github.io.git"
+    },
+    "author": "HackerCloud",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/Sapurton/sapurton.github.io/issues"
+    },
+    "homepage": "https://sapurton.github.io/index.html",
+    "dependencies": {
+      "markdown-toc": "^1.2.0"
+    }
+  }
+  

