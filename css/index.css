@@ -88,7 +88,7 @@ body {
     .contenedor-links-redes-hijo {
         word-spacing: 0.05em !important;
     }
-} 
+}
 
 @media screen and (max-width: 441px) {
     .contenedor-perfil {
